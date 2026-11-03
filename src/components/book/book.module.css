@@ -1,0 +1,193 @@
+.scene { min-height: 100dvh; overflow: clip; background: radial-gradient(ellipse at 49% 35%, #f8f5ee 0, #eeebe3 55%, #e4e1d8 100%); padding: 0 44px; }
+.siteHeader { max-width: 1360px; margin: auto; height: 90px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #9d8e7521; }
+.wordmark { display: flex; align-items: center; gap: 10px; font-family: var(--hand); font-size: 26px; }
+.wordmark > svg { color: var(--coral); }
+.wordmarkDot { color: var(--coral); }
+.headerDedication { display: flex; align-items: center; gap: 10px; font-family: var(--hand); font-size: 20px; color: var(--muted); }
+.headerDedication svg { color: #a76c57; }
+.stage { position: relative; display: flex; align-items: center; justify-content: center; max-width: 1380px; margin: auto; padding: 46px 30px 24px; perspective: 2400px; }
+.book { position: relative; background: #d8c5a2; border-radius: 2px 5px 5px 2px; box-shadow: 1px 2px 0 #bbad94, 3px 4px 0 #ede4d0, 4px 5px 0 #b7a78d, 7px 8px 0 #e0d5bf, 8px 9px 0 #bbac92, 10px 14px 20px #55463122, 0 26px 65px #55463125; transform-style: preserve-3d; }
+.closedBook { width: 470px; min-height: 652px; transform: rotate(-1deg); }
+.openBook { width: min(1060px, 100%); min-height: 650px; }
+.cover { position: relative; min-height: 652px; padding: 32px 35px 24px 45px; background: radial-gradient(ellipse at 20% 10%, #dfc7a5aa, transparent 75%), repeating-linear-gradient(90deg, #6f563305 0px, #6f563305 1px, transparent 1px, transparent 3px), #d2b995; transform-origin: left center; border-radius: 1px 3px 3px 1px; box-shadow: inset -2px 0 5px #6b523919; }
+.coverDate { position: absolute; top: 23px; right: 26px; font-family: var(--hand); font-size: 19px; transform: rotate(4deg); color: #70523e; margin: 0; }
+.coverTitle { text-align: center; position: relative; padding-top: 26px; }
+.coverTitle > span { font-family: Arial, sans-serif; font-size: 8px; letter-spacing: .24em; color: #79634c; }
+.coverTitle h1 { font-family: var(--hand); font-size: 80px; line-height: 1; font-weight: 700; margin: 4px 0 0; letter-spacing: -4px; transform: rotate(-3deg); }
+.coverTitle p { font-family: var(--hand); font-size: 31px; margin: 8px 0 22px; }
+.coverAnnotation { position: relative; width: 260px; height: 61px; margin: 5px auto 0; display: flex; align-items: end; gap: 4px; padding-left: 1px; }
+.coverAnnotation > svg { transform: rotate(-40deg); width: 45px; height: 53px; }
+.coverAnnotation > span { font-family: var(--hand); color: #705940; font-size: 19px; transform: rotate(-5deg); padding-bottom: 4px; }
+.openButton { position: relative; display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 46px; width: fit-content; margin: 5px auto 0; border: 0; border-bottom: 1px solid #71543c66; background: transparent; font-family: var(--hand); font-size: 25px; }
+.openButton svg { transition: transform .2s ease; }
+.openButton:hover svg { transform: translateX(5px); }
+.coverFootnote { display: block; margin-top: 12px; text-align: center; font-family: Arial, sans-serif; font-size: 8px; text-transform: uppercase; letter-spacing: .15em; color: #705e4b; }
+.marginNote { position: absolute; left: calc(50% - 435px); top: 43%; font-family: var(--hand); font-size: 26px; line-height: 1.25; color: #968571; transform: rotate(-9deg); }
+.marginNote > svg { display: block; margin: 10px 0 0 70px; transform: rotate(35deg); opacity: .7; }
+.sideStamp { position: absolute; right: calc(50% - 389px); bottom: 17%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; width: 94px; height: 94px; border: 1px solid #ac957466; border-radius: 50%; color: #96826a; transform: rotate(13deg); outline: 1px dashed #ac957455; outline-offset: 5px; }
+.sideStamp span { font: 9px/1.6 Arial, sans-serif; letter-spacing: .15em; text-align: center; }
+.belowBook { margin: 15px auto 30px; display: flex; align-items: center; justify-content: center; gap: 14px; color: #81735f; font-family: var(--hand); font-size: 21px; }
+.belowBook svg { color: #ad9877; }
+.footer { max-width: 1360px; min-height: 60px; margin: auto; display: flex; justify-content: center; align-items: center; gap: 16px; border-top: 1px solid #9d8e7521; color: #847662; font-family: Arial, sans-serif; font-size: 8px; letter-spacing: .17em; }
+.footer > svg { color: #ac8069; }
+.inside { position: relative; min-height: 650px; }
+.bookTabs { position: absolute; right: -27px; top: 55px; z-index: 8; display: flex; flex-direction: column; gap: 12px; }
+.bookTabs button { display: flex; align-items: center; gap: 6px; writing-mode: vertical-rl; border: 0; padding: 15px 8px 15px 11px; border-radius: 0 4px 4px 0; background: #b8bea0; box-shadow: 2px 2px 3px #3b2e201a; font-family: var(--hand); font-size: 18px; transition: padding .2s; }
+.bookTabs button:nth-child(2) { background: #d6ae96; }
+.bookTabs button:nth-child(3) { background: #d7c29b; }
+.bookTabs button.activeTab { padding-right: 14px; }
+.bookTabs button:hover { filter: brightness(1.04); }
+.pageViewport { height: 650px; overflow: hidden; position: relative; perspective: 1800px; background: var(--paper); border-radius: 2px; overscroll-behavior: contain; }
+.pageContents { height: 100%; }
+.spread { display: grid; grid-template-columns: 1fr 1fr; height: 650px; }
+.page { position: relative; min-width: 0; height: 650px; overflow: hidden; padding: 42px 44px; background: radial-gradient(ellipse at 20% 0, #fff9ee55, transparent 70%), repeating-linear-gradient(0deg, #7d693302, #7d693302 1px, transparent 1px, transparent 3px), var(--paper); }
+.page:first-child { box-shadow: inset -16px 0 24px -20px #79634088; }
+.page:nth-child(2) { box-shadow: inset 16px 0 24px -20px #79634077; }
+.introPage { padding-top: 53px; }
+.eyebrow { font: 8px/1.7 Arial, sans-serif; letter-spacing: .19em; color: #84745f; margin: 0 0 25px; }
+.introTitle { font-family: var(--hand); font-size: clamp(38px, 4vw, 51px); line-height: 1.14; font-weight: 500; margin: 0 0 25px; }
+.introTitle:focus, .personName:focus, .closingPage h2:focus { outline: none; }
+.introCopy { font-size: 13px; line-height: 1.9; color: #766751; }
+.indexKeepsake { position: relative; width: 165px; margin: 25px 0 0 22px; padding: 12px; background: #e8debc; transform: rotate(-6deg); box-shadow: 2px 4px 6px #4630201a; display: flex; flex-direction: column; align-items: center; font-family: var(--hand); font-size: 19px; line-height: 1.15; text-align: center; }
+.indexKeepsake > svg { color: #a96f54; margin-top: 13px; }
+.noteNumber { font-size: 52px; color: #7a805e; line-height: 1.2; }
+.indexBotanical { position: absolute; bottom: 75px; right: 22px; width: 100px; height: 200px; transform: rotate(19deg); }
+.handNote { font-family: var(--hand); font-size: 23px; line-height: 1.2; color: #807158; margin: 18px 0 0 24px; transform: rotate(-3deg); }
+.pageNumber { position: absolute; bottom: 21px; left: 44px; right: 44px; color: #95836b; font-family: var(--hand); font-size: 16px; }
+.indexPage { padding: 40px 36px 25px 44px; }
+.indexHeading { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-bottom: 15px; border-bottom: 1px solid #99856540; }
+.indexHeading h3 { font-family: var(--hand); font-size: 28px; font-weight: 400; margin: 0; }
+.indexHeading > svg { color: #a78063; flex-shrink: 0; }
+.nameGroup h4 { margin: 14px 0 5px; color: #936f55; font-family: var(--hand); font-size: 21px; font-weight: 500; display: flex; align-items: baseline; justify-content: space-between; gap: 5px; }
+.nameGroup h4 > span { color: #8a7a63; font-size: 13px; }
+.nameGrid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; }
+.nameGrid button { background: transparent; border: 0; display: flex; align-items: baseline; gap: 8px; padding: 1px 0; min-height: 25px; text-align: left; font-family: var(--hand); font-size: 20px; line-height: 1.1; transition: color .15s, transform .15s; }
+.nameGrid button:hover { color: #ac644e; transform: translateX(2px); }
+.nameDots { flex: 1; border-bottom: 1px dotted #b9a99088; }
+.nameNumber { color: #8c7b62; font-family: Arial, sans-serif; font-size: 9px; min-width: 13px; text-align: right; }
+.nameNumber svg { color: var(--sage); }
+.indexHint { color: #917f64; font-family: var(--hand); font-size: 16px; display: flex; align-items: center; gap: 5px; margin: 12px 0 0; }
+.turningSheet { position: absolute; z-index: 9; top: 0; bottom: 0; left: 50%; width: 50%; transform-origin: left; backface-visibility: visible; pointer-events: none; background: linear-gradient(90deg, #d4c5aa, #eee3cf 8%, #f7f0e2 70%, #e8ddc7); box-shadow: -8px 0 30px #44331a22; }
+.turningSheet > span { position: absolute; bottom: 24px; right: 30px; font-family: var(--hand); color: #ac9879; }
+.controls { max-width: 1060px; min-height: 65px; margin: 0 auto 20px; position: relative; display: flex; align-items: center; justify-content: space-between; }
+.utilityControls { display: flex; gap: 20px; }
+.utilityControls button { background: transparent; border: 0; display: flex; align-items: center; gap: 7px; color: #81725f; font-family: var(--hand); font-size: 19px; min-height: 44px; padding: 0; }
+.utilityControls button[aria-pressed=true] { color: #4e6748; }
+.pageNavigation { display: flex; align-items: center; gap: 20px; }
+.pageNavigation button { border: 1px solid #b2a38766; background: #f4efe44d; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; transition: background .15s; }
+.pageNavigation button:hover:not(:disabled) { background: #e0d4bd; }
+.pageNavigation button:disabled { opacity: .3; }
+.pageNavigation > span { font-family: var(--hand); font-size: 20px; color: #7c6b55; min-width: 83px; text-align: center; }
+.skipButton { position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%); background: transparent; border: 0; display: flex; gap: 8px; align-items: center; font-family: var(--hand); font-size: 20px; color: #865a42; min-height: 44px; }
+.letterPage { display: flex; flex-direction: column; padding-top: 53px; }
+.fromLabel { display: block; font-family: var(--hand); font-size: 25px; margin-top: 32px; color: #8b765d; }
+.personName { font-family: var(--hand); font-size: 64px; line-height: 1.2; font-weight: 500; margin: 0 0 15px; }
+.envelopeHint { font-family: var(--hand); font-size: 21px; text-align: center; color: #7d6e56; margin: 20px 0 0; }
+.envelopeHint > svg { vertical-align: middle; color: #b17d61; margin-left: 4px; }
+.envelopeHint > span { display: block; font-family: Arial, sans-serif; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; margin-top: 8px; color: #86775e; }
+.letterFooter { margin-top: auto; display: flex; align-items: center; gap: 11px; color: #a38d6c; }
+.letterFooter > span { font-family: var(--hand); font-size: 19px; }
+.memoriesHeading { display: flex; justify-content: space-between; align-items: center; font-family: var(--hand); font-size: 25px; color: #88755c; line-height: 1.15; transform: rotate(2deg); }
+.memoriesHeading > svg { color: #ba8e69; }
+.memoriesPage { display: flex; flex-direction: column; }
+.emptyMemories { position: relative; z-index: 1; display: flex; flex: 1; min-height: 0; flex-direction: column; align-items: center; justify-content: center; margin-top: 12px; }
+.emptyMemories > :first-child { width: min(175px, 100%); }
+.emptyMemories > :first-child > div { height: 165px; }
+.emptyMemories > p { font-family: var(--hand); font-size: 20px; line-height: 1.2; color: #8b775a; text-align: center; transform: rotate(-4deg); max-width: 210px; margin: 10px 0 0; }
+.photoDraftLabel { font-family: Arial, sans-serif; font-size: 8px; letter-spacing: .15em; color: #88765c; margin-top: 12px; }
+.memoriesBotanical { position: absolute; width: 90px; height: 170px; bottom: 25px; right: 10px; transform: rotate(16deg); opacity: .5; }
+.memoryFootnote { display: block; position: relative; z-index: 1; margin-top: auto; text-align: center; font-family: var(--hand); font-size: 18px; color: #8b795f; }
+.inlineLetter { flex: 1; min-height: 0; overflow-y: auto; font-size: 14px; line-height: 2; overflow-wrap: anywhere; }
+.inlineLetter p { white-space: pre-line; }
+.draftMessage { color: #8a7b64; font-family: var(--hand); font-size: 26px; }
+.readingView .pageViewport { height: 650px; }
+.closingPage { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 15px; padding-bottom: 60px; }
+.closingPage h2, .closingPage h3 { font-family: var(--hand); font-size: 43px; font-weight: 500; margin: 10px 0; line-height: 1.2; }
+.celebrateButton { border: 1px solid #bda887; padding: 12px 16px; display: flex; align-items: center; gap: 9px; background: #e6d8b9; font-family: var(--hand); font-size: 21px; }
+@media (min-width: 701px) and (max-width: 1050px) {
+  .scene { padding: 0 24px; }
+  .page { padding-left: 30px; padding-right: 30px; }
+  .indexPage { padding-left: 32px; padding-right: 25px; }
+  .nameGrid { column-gap: 16px; }
+  .nameGroup h4 > span { display: none; }
+  .indexHeading h3 { font-size: 25px; }
+  .marginNote { left: calc(50% - 360px); font-size: 22px; }
+  .sideStamp { right: calc(50% - 340px); width: 75px; height: 75px; }
+}
+@media (max-width: 850px) { .marginNote, .sideStamp { display: none; } }
+@media (max-width: 700px) {
+  .scene { padding: 0 18px; }
+  .siteHeader { height: 73px; }
+  .wordmark { font-size: 23px; }
+  .wordmark svg { width: 21px; }
+  .headerDedication { display: none; }
+  .stage { padding: 30px 10px 20px; align-items: start; }
+  .closedBook { width: min(380px, 100%); min-height: 602px; }
+  .cover { min-height: 602px; padding: 34px 24px 20px 34px; }
+  .coverTitle h1 { font-size: 73px; }
+  .coverTitle p { font-size: 28px; margin-bottom: 17px; }
+  .coverTitle > span { font-size: 7px; }
+  .coverDate { font-size: 16px; right: 20px; top: 20px; }
+  .coverAnnotation { width: 225px; height: 58px; }
+  .coverAnnotation > span { font-size: 18px; }
+  .openButton { font-size: 23px; gap: 8px; }
+  .coverFootnote { font-size: 7px; }
+  .belowBook { font-size: 18px; gap: 8px; text-align: center; margin-top: 7px; line-height: 1.3; }
+  .belowBook svg { flex-shrink: 0; width: 11px; }
+  .footer { flex-wrap: wrap; gap: 9px; font-size: 6px; letter-spacing: .1em; min-height: 52px; }
+  .openBook { width: 100%; min-height: 610px; }
+  .inside { min-height: 610px; }
+  .pageViewport, .readingView .pageViewport { height: min(720px, calc(100dvh - 205px)); min-height: 500px; overflow-y: auto; overflow-x: hidden; scrollbar-width: thin; scrollbar-color: #b5a486 transparent; }
+  .pageContents { height: auto; min-height: 100%; }
+  .spread { display: flex; flex-direction: column; height: auto; min-height: 610px; }
+  .page { height: auto; overflow: visible; padding: 36px 26px 48px 31px; box-shadow: none !important; }
+  .introPage { padding-bottom: 28px; }
+  .introTitle { font-size: 41px; margin-bottom: 18px; }
+  .introCopy { font-size: 12px; }
+  .indexKeepsake { width: 153px; padding: 10px; margin: 25px 0 10px 12px; font-size: 19px; }
+  .noteNumber { font-size: 48px; }
+  .indexBotanical { bottom: 50px; right: 15px; width: 87px; height: 165px; }
+  .introPage .handNote { display: none; }
+  .introPage .pageNumber { position: static; display: block; margin-top: 25px; font-size: 15px; }
+  .indexPage { border-top: 1px dashed #a68d6438; padding-top: 26px; }
+  .indexHeading h3 { font-size: 27px; }
+  .nameGroup h4 { margin-top: 23px; }
+  .nameGroup h4 > span { font-size: 12px; }
+  .nameGrid { column-gap: 18px; }
+  .nameGrid button { min-height: 44px; font-size: 23px; }
+  .nameGroup h4 > span { display: none; }
+  .bookTabs { right: -22px; top: 42px; gap: 9px; }
+  .bookTabs button { font-size: 15px; padding: 12px 6px; min-width: 25px; }
+  .bookTabs button.activeTab { padding-right: 8px; }
+  .bookTabs button svg { width: 13px; }
+  .turningSheet { left: 0; width: 100%; }
+  .controls { flex-direction: column-reverse; gap: 5px; margin-bottom: 18px; }
+  .pageNavigation { gap: 24px; }
+  .utilityControls { gap: 25px; }
+  .utilityControls button { font-size: 17px; }
+  .skipButton { bottom: -34px; background: var(--table); z-index: 3; white-space: nowrap; }
+  .contributorSpread .memoriesPage { min-height: 430px; }
+  .letterPage { min-height: 650px; padding-top: 40px; }
+  .fromLabel { margin-top: 22px; }
+  .personName { font-size: 56px; }
+  .letterFooter { margin-top: auto; }
+  .pageNumber { left: 31px; bottom: 17px; }
+  .memoriesPage { border-top: 1px dashed #a68d6438; padding-bottom: 30px; }
+  .memoriesHeading { font-size: 24px; }
+  .memoriesBotanical { bottom: 25px; width: 75px; }
+  .inlineLetter { flex: none; min-height: auto; overflow: visible; }
+}
+@media (max-width: 370px) {
+  .scene { padding: 0 13px; }
+  .stage { padding-left: 8px; padding-right: 8px; }
+  .cover { padding-left: 28px; padding-right: 20px; min-height: 565px; }
+  .closedBook { min-height: 565px; }
+  .coverTitle h1 { font-size: 64px; }
+  .coverAnnotation { width: 190px; }
+  .coverAnnotation > span { font-size: 16px; }
+  .openButton { font-size: 20px; }
+  .page { padding-left: 25px; padding-right: 23px; }
+  .indexHeading h3 { font-size: 24px; }
+  .nameGrid { column-gap: 14px; }
+  .nameGrid button { font-size: 21px; }
+}

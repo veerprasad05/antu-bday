@@ -1,0 +1,45 @@
+.underline { position: relative; display: inline-block; }
+.tape { position: absolute; width: 100px; height: 28px; background-color: #d7a28c; color: #e8b6a1; opacity: .9; top: -12px; left: -22px; transform: rotate(-31deg); z-index: 2; clip-path: polygon(2% 4%, 98% 0, 100% 93%, 1% 100%, 3% 75%, 0 55%); }
+.sageTape { color: #b9c5a1; background-color: #8d9d77; }
+.bottomTape { top: auto; left: auto; right: -33px; bottom: 3px; width: 85px; transform: rotate(37deg); }
+.polaroid { position: relative; display: block; width: 235px; max-width: 100%; padding: 12px 12px 0; border: 0; background: #fffcf6; box-shadow: 2px 5px 10px #4b382222, 0 1px 2px #4b382211; transform: rotate(-5deg); }
+.polaroid .tape { width: 78px; height: 22px; top: -9px; left: -17px; }
+.polaroid .bottomTape { width: 68px; top: auto; left: auto; right: -25px; bottom: 3px; }
+.coverPolaroid { width: 250px; margin: 28px auto 0; }
+.photoWindow { height: 245px; overflow: hidden; background: #d8d1be; }
+.photoWindow img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photoPlaceholder { background: radial-gradient(ellipse at 30% 20%, #e6dfcf, transparent 70%), repeating-linear-gradient(0deg, transparent, transparent 3px, #746a5410 4px), #c6c5b3; color: #5c6752; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; }
+.photoPlaceholder span { font-family: var(--hand); font-size: 27px; line-height: 1.1; text-align: center; }
+.photoCaption { display: block; padding: 13px 0 15px; text-align: center; font-family: var(--hand); font-size: 19px; line-height: 1.2; }
+.scattered { position: absolute; inset: 0; overflow: hidden; pointer-events: none; color: #bb8066; }
+.scattered > svg { position: absolute; opacity: .8; }
+.heartOne { top: 12%; right: 27%; transform: rotate(-12deg); }
+.starOne { top: 8%; right: 12%; transform: rotate(17deg); }
+.flowerOne { top: 49%; left: 10%; transform: rotate(15deg); }
+.sparkleOne { top: 55%; right: 9%; }
+.heartTwo { bottom: 16%; right: 27%; transform: rotate(13deg); }
+.starTwo { bottom: 10%; left: 23%; transform: rotate(-20deg); }
+.flowerTwo { bottom: 23%; left: 13%; }
+.sketchArrow { width: 62px; height: 62px; }
+.binding { position: absolute; top: 7%; bottom: 7%; left: -14px; width: 42px; z-index: 5; display: flex; flex-direction: column; justify-content: space-between; pointer-events: none; }
+.ring { position: relative; display: block; width: 36px; height: 14px; border-radius: 50%; background: linear-gradient(180deg, #d0cec0 2%, #f8f8f0 17%, #86877d 34%, #f3f1df 44%, #a9a99c 56%, #4a4d44 74%, #282a24 91%); box-shadow: 0 3px 2px #352d2d55, 1px -1px 1px #fff9; }
+.ring::after { content: ""; position: absolute; inset: 4px 4px 5px; border-radius: 50%; background: #baa788; box-shadow: inset 0 2px 2px #302b28aa, 0 1px 0 #fffa; }
+.centerBinding { left: calc(50% - 18px); }
+.botanical { display: flex; align-items: center; width: 120px; height: 230px; color: #647052; pointer-events: none; opacity: .7; }
+@media (max-width: 700px) {
+  .centerBinding { left: -14px; }
+  .coverPolaroid { width: 215px; }
+  .photoWindow { height: 215px; }
+  .coverPolaroid .photoWindow { height: 215px; }
+  .ring { width: 30px; height: 13px; }
+  .binding { width: 34px; left: -12px; }
+  .flowerOne { left: 6%; }
+  .tape { width: 82px; }
+  .polaroid .tape { width: 66px; height: 18px; top: -7px; left: -13px; }
+  .polaroid .bottomTape { width: 56px; top: auto; left: auto; right: -20px; bottom: 3px; }
+}
+@media (max-width: 370px) {
+  .coverPolaroid { width: 185px; }
+  .coverPolaroid .photoWindow { height: 180px; }
+  .photoCaption { font-size: 17px; }
+}

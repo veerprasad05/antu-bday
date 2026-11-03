@@ -1,0 +1,43 @@
+{
+  "name": "antara-birthday",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 0.0.0.0",
+    "prebuild": "node --import tsx scripts/check-content.ts",
+    "build": "next build",
+    "start": "next start --hostname 0.0.0.0",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/unit/*.test.ts",
+    "test:e2e": "playwright test",
+    "check:content": "node --import tsx scripts/check-content.ts",
+    "check:ready": "node --import tsx scripts/check-content.ts --ready"
+  },
+  "dependencies": {
+    "@fontsource/caveat": "^5.0.0",
+    "@fontsource/lora": "^5.0.0",
+    "@phosphor-icons/react": "^2.1.10",
+    "@radix-ui/react-dialog": "^1.1.10",
+    "canvas-confetti": "^1.9.3",
+    "motion": "^12.0.0",
+    "next": "^16.2.9",
+    "pattern.css": "^1.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "rough-notation": "^0.5.1",
+    "roughjs": "^4.6.6",
+    "tsx": "^4.19.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.2.9",
+    "typescript": "^5.8.0"
+  },
+  "engines": { "node": ">=22.0.0" }
+}

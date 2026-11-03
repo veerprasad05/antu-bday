@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+.env*
+!.env.example
+.vercel/
+/antara bday contribs 1/
+/antara bday contribs 2/
+/antara bday contribs 3/
+/shanaya images/
