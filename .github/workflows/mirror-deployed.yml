@@ -1,0 +1,42 @@
+name: Mirror to deployed repository
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mirror-deployed-main
+  cancel-in-progress: true
+
+jobs:
+  mirror:
+    if: github.repository == 'veerprasad05/antu-bday' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source commit
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Force push main to deployed repository
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_REPO_SSH_KEY }}
+        run: |
+          if [[ -z "$DEPLOY_KEY" ]]; then
+            echo "Missing DEPLOY_REPO_SSH_KEY repository secret" >&2
+            exit 1
+          fi
+
+          ssh_dir="$(mktemp -d)"
+          trap 'rm -rf "$ssh_dir"' EXIT
+          chmod 700 "$ssh_dir"
+          printf '%s\n' "$DEPLOY_KEY" > "$ssh_dir/key"
+          chmod 600 "$ssh_dir/key"
+          printf '%s\n' 'github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl' > "$ssh_dir/known_hosts"
+
+          export GIT_SSH_COMMAND="ssh -i $ssh_dir/key -o IdentitiesOnly=yes -o UserKnownHostsFile=$ssh_dir/known_hosts -o StrictHostKeyChecking=yes"
+          git push --force git@github.com:veerprasad05/antu-bday-deployed.git HEAD:refs/heads/main
